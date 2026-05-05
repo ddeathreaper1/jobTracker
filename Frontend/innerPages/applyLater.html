@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Later</title>
+    <link rel="stylesheet" href="applyLater.css">
+</head>
+<body>
+    <div class="container">
+        <header class="table-header">
+            <button class="navBtn" id="backBtn">Back</button>
+            <h1 style="color: white;">Apply Later List</h1>
+            <button class="navBtn" id="addBtn">Add</button>
+        </header>
+
+        <table class="applyLaterTable">
+            <thead>
+                <tr>
+                    <th> SL No</th>
+                    <th>Company Name</th>
+                    <th>Apply Link</th>
+                    <th>Applied</th>
+                </tr>
+            </thead>
+            <tbody id="applyLaterTableBody">
+            </tbody>
+        </table>
+
+        <div id="pagination" class="paginationContainer">
+        </div>
+    </div>
+
+
+
+    <div id="applyLaterOverlay" class="applyLater-overlay">
+        <div class="applyLater-card">
+            <div class="applyLater-header">
+                <h3>Add New Apply Later</h3>
+                <button id="applyLatercloseOverlay">Close</button>
+            </div>
+            <form class="applyLater-AddForm" id="applyLaterOverlayForm">
+                <div class="formItem">
+                    <label>Company Name</label>
+                    <input type="text" id="companyName" placeholder="e.g google" required>
+                </div>
+
+                <div class="formItem">
+                    <label>Apply Link</label>
+                    <input type="text" id="applyLink" placeholder="e.g linkedin.com/careers/1234" required>
+                </div>
+                <div class="formItem">
+                    <label>Applied</label>
+                    <input type="radio" id="yes" name="choice" value="true">
+                    <label for="yes">Yes</label>
+                    <input type="radio" id="no" name="choice" value="false">
+                    <label for="no">No</label>
+                </div>
+
+                <button type="submit" class="submitBtn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="applyLater.js"></script>
+</body>
+</html>

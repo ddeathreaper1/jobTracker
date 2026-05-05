@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>TRACKER.IO</h1>
+        <div class="user-profile">
+            <span>DIDARUL ISLAM LASKAR</span>
+            <div class="profile-icon" id="profileIcon">
+                <img src="../assets/user.png" alt="User">
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <section class="card todo-list">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h2>TO DO</h2> 
+                    <button id="addNote" class="add-btn" style="background-color: #6366f1; border: none; color: white; border-radius: 6px; padding: 5px 10px; cursor: pointer;">Add +</button>
+                </div>
+                <ul id="todo-list">
+
+                </ul>
+            </section>
+
+            <section class="card calendar-box">
+                <h2 id="month"></h2>
+                <div class="calendar-grid" id="calendar-grid">
+
+                </div>
+            </section>
+        </aside>
+
+        <main class="main-content">
+            <div class="stats-row">
+                <div class="stat-column" id="applied-list">
+                    <div class="stat-header" id="applied-count">APPLIED</div>
+                </div>
+                
+                <div class="stat-column" id="interviews-list">
+                    <div class="stat-header" id="interviews-count">INTERVIEWS</div>
+                    
+                </div>
+                
+                <div class="stat-column" id="offers-list">
+                    <div class="stat-header" id="offers-count">OFFERS</div>
+                </div>
+
+                <div class="insights-card">
+                    <h2 style="color: white; margin-bottom: 20px;">QUICK INSIGHTS</h2>
+                    <div class="insight-item" id="QI-Applications">
+                        <span style="font-size: 20px; font-weight: bold;">Applications</span> <span>-</span>
+                    </div>
+                    <div class="insight-item" id="QI-Interviews">
+                        <span style="font-size: 20px; font-weight: bold;">Interviews</span> <span>-</span>
+                    </div>
+                    <div class="insight-item" id="QI-Offers">
+                        <span style="font-size: 20px; font-weight: bold;">Offers</span> <span>-</span>
+                    </div>
+                </div>
+            </div>
+
+            <section class="features">
+                <button id="gotoApplicationBtn" class="navBtn">Applications</button>
+                <button id="gotoInterviewBtn" class="navBtn">Interviews</button>
+                <button id="gotoOfferBtn" class="navBtn">Offers</button>
+                <button id="gotoCompaniesBtn" class="navBtn">Companies</button>
+                <button id="gotoApplylaterBtn" class="navBtn">Apply Later</button>
+            </section>
+        </main>
+    </div>
+
+    <div id="noteOverlay" class="note-overlay">
+        <div class="note-card">
+            <div class="note-header">
+                <h3>Add New Note</h3>
+                <button id="notecloseOverlay">Close</button>
+            </div>
+            <form class="note-AddForm" id="noteOverlayForm">
+                <div class="formItem">
+                    <label>Content</label>
+                    <input type="text" id="noteContent" placeholder="Write here..." required>
+                </div>
+                <button type="submit" class="submitBtn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="applicationOverlay" class="application-overlay">
+        <div class="application-card">
+            <div class="application-header">
+                <h3>Add New Application</h3>
+                <button id="applicationcloseOverlay">Close</button>
+            </div>
+            <form class="application-AddForm" id="applicationOverlayForm">
+                <div class="formItem">
+                    <label>Company Name</label>
+                    <input type="text" id="companyName" placeholder="e.g google" required>
+                </div>
+
+                <div class="formItem">
+                    <label>Role</label>
+                    <input type="text" id="applicationRole" placeholder="e.g Software Engineer I" required>
+                </div>
+                <div class="formItem">
+                    <label>Note</label>
+                    <input type="text" id="applicationNote" placeholder="Write a note">
+                </div>
+
+                <div class="formItem">
+                    <label for="applicationStatus">Status</label>
+                    <select id="applicationStatus" required>
+                        <option value="" disabled selected>Select status</option>
+                        <option value="Applied">Applied</option>
+                        <option value="Online Assessment">Online Assessment</option>
+                        <option value="Interviewing">Interviewing</option>
+                        <option value="Offered">Offered</option>
+                        <option value="Rejected">Rejected</option>
+                    </select>
+                </div>
+                <div class="formItem">
+                    <label>Resume/Cover Letter</label>
+                    <input type="file" id="applicationAttachments" placeholder="Provide attachment">
+                </div>
+
+                <div class="formItem">
+                    <label>Applied Date</label>
+                    <input type="date" id="appliedDate" required>
+                </div>
+                <button type="submit" class="submitBtn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="interviewOverlay" class="interview-overlay">
+        <div class="interview-card">
+            <div class="interview-header">
+                <h3>Add New Interviw</h3>
+                <button id="interviewcloseOverlay">Close</button>
+            </div>
+            <form class="interview-AddForm" id="interviewOverlayForm">
+                <div class="formItem">
+                    <label>Company Name</label>
+                    <input type="text" id="interviewCompanyName" placeholder="e.g google" required>
+                </div>
+
+                <div class="formItem">
+                    <label>Role</label>
+                    <input type="text" id="interviewRole" placeholder="e.g Software Engineer I" required>
+                </div>
+                <div class="formItem">
+                    <label>Interviw Date</label>
+                    <input type="date" id="interviewDate" required>
+                </div>
+                <button type="submit" class="submitBtn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+    <div id="offerOverlay" class="offer-overlay">
+        <div class="offer-card">
+            <div class="offer-header">
+                <h3>Add New Offer</h3>
+                <button id="offercloseOverlay">Close</button>
+            </div>
+            <form class="offer-AddForm" id="offerOverlayForm">
+                <div class="formItem">
+                    <label>Company Name</label>
+                    <input type="text" id="offerCompanyName" placeholder="e.g google" required>
+                </div>
+
+                <div class="formItem">
+                    <label>Role</label>
+                    <input type="text" id="offerRole" placeholder="e.g Software Engineer I" required>
+                </div>
+                <div class="formItem">
+                    <label>Last Acceptance Date</label>
+                    <input type="date" id="offerDate" required>
+                </div>
+                <button type="submit" class="submitBtn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0f172a;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+}
+
+/* Header & Buttons */
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.navBtn {
+    background: #f0eeed;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+
+
+
+.application-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.application-card{
+    background: #1e293b;
+    border: 1px solid var(--card-border);
+    padding: 30px;
+    border-radius: 20px;
+    width: 400px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+
+.application-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.application-header h3 { margin: 0; color: var(--primary); }
+
+
+#closeOverlay{
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.formItem{
+    margin-bottom: 15px;
+}
+
+.formItem label{
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 5px;
+}
+
+
+.formItem input{
+    width: 100%;
+    padding: 10px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    color: white;
+    outline: none;
+}
+
+.submitBtn{
+    width: 100%;
+    padding: 12px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+
+
+
+
+.app_int_overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.app_int_card{
+    background: #1e293b;
+    border: 1px solid var(--card-border);
+    padding: 30px;
+    border-radius: 20px;
+    width: 400px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+
+.app_int_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.app_int_header h3 { margin: 0; color: var(--primary); }
+
+
+#closeOverlay{
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Table Styling */
+.applicationTable {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: black;
+    color: white;
+    text-align: center;
+    table-layout: fixed;
+}
+
+.applicationTable th {
+    background-color: #d3d3d3;
+    color: black;
+    padding: 15px;
+    border: 1px solid white;
+}
+
+.applicationTable td {
+    padding: 15px;
+    border: 1px solid white;
+    font-weight: bold;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-all;
+}
+
+/* Pagination */
+.paginationContainer {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.page-link {
+    cursor: pointer;
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.page-link.active {
+    text-decoration: underline;
+}

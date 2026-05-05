@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="application.css">
+</head>
+<body>
+    <div class="container">
+        <header class="table-header">
+            <button class="navBtn" id="backBtn">Back</button>
+            <h1 style="color: white;">Applications</h1>
+            <button class="navBtn" id="addBtn">Add</button>
+            <div class="search" style="margin: 10px;">
+                <input type="text" id="searchInput" placeholder="Search by company or Role or Status..." style="padding: 8px; width: 100%; border-radius: 4px; border: 1px solid #ccc;">
+            </div>
+        </header>
+
+        <table class="applicationTable">
+            <thead>
+                <tr>
+                    <th> SL No</th>
+                    <th>Company Name</th>
+                    <th>Apply Date</th>
+                    <th>Role</th>
+                    <th>Note</th>
+                    <th>Status</th>
+                    <th>Attachments</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="applicationTableBody">
+            </tbody>
+        </table>
+
+        <div id="pagination" class="paginationContainer">
+        </div>
+    </div>
+
+
+    <div id="applicationOverlay" class="application-overlay">
+        <div class="application-card">
+            <div class="application-header">
+                <h3>Add New Application</h3>
+                <button id="applicationcloseOverlay">Close</button>
+            </div>
+            <form class="application-AddForm" id="applicationOverlayForm">
+                <div class="formItem">
+                    <label>Company Name</label>
+                    <input type="text" id="companyName" placeholder="e.g google" required>
+                </div>
+
+                <div class="formItem">
+                    <label>Role</label>
+                    <input type="text" id="applicationRole" placeholder="e.g Software Engineer I" required>
+                </div>
+                <div class="formItem">
+                    <label>Note</label>
+                    <input type="text" id="applicationNote" placeholder="Write a note">
+                </div>
+
+                <div class="formItem">
+                    <label for="applicationStatus">Status</label>
+                    <select id="applicationStatus" required>
+                        <option value="" disabled selected>Select status</option>
+                        <option value="Applied">Applied</option>
+                        <option value="Online Assessment">Online Assessment</option>
+                        <option value="Interviewing">Interviewing</option>
+                        <option value="Offered">Offered</option>
+                        <option value="Rejected">Rejected</option>
+                    </select>
+                </div>
+                <div class="formItem">
+                    <label>Resume/Cover Letter</label>
+                    <input type="file" id="applicationAttachments" placeholder="Provide attachment">
+                </div>
+
+                <div class="formItem">
+                    <label>Applied Date</label>
+                    <input type="date" id="appliedDate" required>
+                </div>
+                <button type="submit" class="submitBtn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="app_int_overlay" class="app_int_overlay">
+        <div class="app_int_card">
+            <div class="app_int_header">
+                <h3> Add Interview Date</h3>
+                <button id="closeAppIntOverlay">Close</button>
+            </div>
+            <form class="addIntDate" id="addIntDate" onsubmit="getIntDate(event)">
+                <div class="formItem">
+                    <label>Interview Date</label>
+                    <input id="intDate" type="date" required>
+                </div>
+                <button type="submit" class="submitBtn">Submit</button>
+                
+            </form>
+        </div>
+    </div>
+
+
+    <!-- <div id="applicationOverlay" class="application-overlay">
+        <div class="application-card">
+            <div class="application-header">
+                <h3>Add New Application</h3>
+                <button id="applicationcloseOverlay">Close</button>
+            </div>
+            <form class="application-AddForm" id="applicationOverlayForm">
+                <div class="formItem">
+                    <label>Company Name</label>
+                    <input type="text" id="companyName" placeholder="e.g google" required>
+                </div>
+
+                <div class="formItem">
+                    <label>Apply Date</label>
+                    <input type="date" id="applyDate" required>
+                </div>
+                <div class="formItem">
+                    <label>Role</label>
+                    <input type="text" id="role" required>
+                </div>
+
+                <div class="formItem">
+                    <label>Note</label>
+                    <input type="text" id="note">
+                </div>
+
+                <div class="formItem">
+                    <label>Status</label>
+                    <input type="text" id="status" required>
+                </div>
+
+                <div class="formItem">
+                    <label>Status</label>
+                    <input type="text" id="status" required>
+                </div>
+
+                <button type="submit" class="submitBtn">Submit</button>
+            </form>
+        </div>
+    </div> -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="application.js"></script>
+</body>
+</html>

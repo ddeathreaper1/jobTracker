@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interviews</title>
+    <link rel="stylesheet" href="interview.css">
+</head>
+<body>
+    <div class="container">
+        <header class="table-header">
+            <button class="navBtn" id="backBtn">Back</button>
+            <h1 style="color: white;">Interviews</h1>
+            <button class="navBtn" id="addBtn">Add</button>
+            <div class="search">
+                <input type="text" id="searchInput" placeholder="Company Name or Role" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc;">
+            </div>
+        </header>
+
+        <table class="interviewTable">
+            <thead>
+                <tr>
+                    <th> SL No</th>
+                    <th>Company Name</th>
+                    <th>Interview Date</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody id="interviewTableBody">
+            </tbody>
+        </table>
+
+        <div id="pagination" class="paginationContainer">
+        </div>
+    </div>
+
+
+
+    <div id="interviewOverlay" class="interview-overlay">
+        <div class="interview-card">
+            <div class="interview-header">
+                <h3>Add New Interview</h3>
+                <button id="interviewcloseOverlay">Close</button>
+            </div>
+            <form class="interview-AddForm" id="interviewOverlayForm">
+                <div class="formItem">
+                    <label>Company Name</label>
+                    <input type="text" id="companyName" placeholder="e.g google" required>
+                </div>
+
+                <div class="formItem">
+                    <label>Interview Date</label>
+                    <input type="date" id="interviewDate" required>
+                </div>
+                <div class="formItem">
+                    <label>Role</label>
+                    <input type="text" id="role" required>
+                </div>
+
+                <button type="submit" class="submitBtn">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="interview.js"></script>
+</body>
+</html>
