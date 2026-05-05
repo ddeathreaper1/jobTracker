@@ -18,7 +18,7 @@ async function calendar(){
     const token = localStorage.getItem("token")
 
     try {
-    const response = await axios.get("http://localhost:3000/interviews/getInterviews",{
+    const response = await axios.get("https://jobtracker-xhqr.onrender.com/interviews/getInterviews",{
         headers:{
             'Authorization': `Bearer ${token}`
         }
@@ -90,7 +90,7 @@ async function loadAppliedApplications(){
     const token = localStorage.getItem("token")
 
     try {
-        const response = await axios.get("http://localhost:3000/applications/getApplications",{
+        const response = await axios.get("https://jobtracker-xhqr.onrender.com/applications/getApplications",{
             headers:{
                 "Authorization": `Bearer ${token}`
             }
@@ -167,7 +167,7 @@ function applicationOverlay(){
         const token = localStorage.getItem("token")
 
 
-        await axios.post("http://localhost:3000/applications/addApplication", formData,{
+        await axios.post("https://jobtracker-xhqr.onrender.com/applications/addApplication", formData,{
         headers:{
             "Authorization": `Bearer ${token}`,
             "Content-Type": "multipart/form-data"
@@ -192,7 +192,7 @@ async function loadInterviews(){
     const token = localStorage.getItem("token")
 
     try {
-        const response = await axios.get("http://localhost:3000/interviews/getInterviews",{
+        const response = await axios.get("https://jobtracker-xhqr.onrender.com/interviews/getInterviews",{
             headers:{
                 "Authorization": `Bearer ${token}`
             }
@@ -267,7 +267,7 @@ function interviewOverlay(){
             interviewDate:interviewDate
         }
 
-        await axios.post("http://localhost:3000/interviews/addInterview", interview,{
+        await axios.post("https://jobtracker-xhqr.onrender.com/interviews/addInterview", interview,{
         headers:{
             "Authorization": `Bearer ${token}`
         }
@@ -287,7 +287,7 @@ async function loadOffers(){
     const token = localStorage.getItem("token")
 
     try {
-        const response = await axios.get("http://localhost:3000/offers/getOffers",{
+        const response = await axios.get("https://jobtracker-xhqr.onrender.com/offers/getOffers",{
             headers:{
                 "Authorization": `Bearer ${token}`
             }
@@ -360,7 +360,7 @@ function offerOverlay(){
             lastDate:offerDate
         }
 
-        await axios.post("http://localhost:3000/offers/addOffer", offer,{
+        await axios.post("https://jobtracker-xhqr.onrender.com/offers/addOffer", offer,{
         headers:{
             "Authorization": `Bearer ${token}`
         }
@@ -379,9 +379,9 @@ async function loadQuickInsights(){
     const token = localStorage.getItem("token")
 
     try {
-        const apps = await axios.get("http://localhost:3000/applications/getApplications", {headers:{"Authorization":`Bearer ${token}`}})
-        const interviews = await axios.get("http://localhost:3000/interviews/getInterviews", {headers:{"Authorization":`Bearer ${token}`}})
-        const offers = await axios.get("http://localhost:3000/offers/getOffers", {headers:{"Authorization":`Bearer ${token}`}})
+        const apps = await axios.get("https://jobtracker-xhqr.onrender.com/applications/getApplications", {headers:{"Authorization":`Bearer ${token}`}})
+        const interviews = await axios.get("https://jobtracker-xhqr.onrender.com/interviews/getInterviews", {headers:{"Authorization":`Bearer ${token}`}})
+        const offers = await axios.get("https://jobtracker-xhqr.onrender.com/offers/getOffers", {headers:{"Authorization":`Bearer ${token}`}})
 
         const totalApps = apps.data.length
         const totalInterviews = interviews.data.length
@@ -409,7 +409,7 @@ async function loadQuickInsights(){
 async function loadToDo(){
     const token = localStorage.getItem("token")
 
-    const response = await axios.get("http://localhost:3000/notes/getNotes",{
+    const response = await axios.get("https://jobtracker-xhqr.onrender.com/notes/getNotes",{
         headers:{
             "Authorization":`Bearer ${token}`
         }
@@ -431,7 +431,7 @@ async function loadToDo(){
                     completed: true,
                     content: note.content
                 }
-                const res = await axios.put("http://localhost:3000/notes/editNote",updatedNote,{
+                const res = await axios.put("https://jobtracker-xhqr.onrender.com/notes/editNote",updatedNote,{
                     headers:{
                         "Authorization": `Bearer ${token}`
                     }
@@ -465,7 +465,7 @@ async function loadToDo(){
 //             completed:false
 //         }
     
-//         await axios.post("http://localhost:3000/notes/addNote", note,{
+//         await axios.post("https://jobtracker-xhqr.onrender.com/notes/addNote", note,{
 //         headers:{
 //             "Authorization": `Bearer ${token}`
 //         }
@@ -502,7 +502,7 @@ function noteOverlay(){
             completed:false
         }
 
-        await axios.post("http://localhost:3000/notes/addNote", note,{
+        await axios.post("https://jobtracker-xhqr.onrender.com/notes/addNote", note,{
         headers:{
             "Authorization": `Bearer ${token}`
         }
@@ -552,7 +552,7 @@ async function verify(){
         return
     }
     try {
-        await axios.get(`http://localhost:3000/user/verifyUser`,{
+        await axios.get(`https://jobtracker-xhqr.onrender.com/user/verifyUser`,{
             headers:{
                 "Authorization": `Bearer ${token}`
             }

@@ -1,4 +1,4 @@
-const api_url = "http://localhost:3000/user"
+const api_url = "https://jobtracker-xhqr.onrender.com/user"
 
 function handleFormSubmit(event){
     event.preventDefault()

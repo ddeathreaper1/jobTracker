@@ -5,7 +5,7 @@ const rowsPerPage = 10
 async function loadApplyLaters(){
     try {
         const token = localStorage.getItem("token")
-        const response = await axios.get("http://localhost:3000/applyLater/getApplyLaters",{
+        const response = await axios.get("https://jobtracker-xhqr.onrender.com/applyLater/getApplyLaters",{
             headers:{
                 "Authorization": `Bearer ${token}`
             }
@@ -47,7 +47,7 @@ async function renderTable(){
 
             btn.addEventListener("click",async ()=>{
                 const token = localStorage.getItem('token')
-                await axios.put("http://localhost:3000/applyLater/editApplyLater",{
+                await axios.put("https://jobtracker-xhqr.onrender.com/applyLater/editApplyLater",{
                     id:applyLater.id,
                     companyName:applyLater.companyName,
                     applyLink:applyLater.applyLink,
@@ -129,7 +129,7 @@ async function navButtons(){
             applied:applied
         }
 
-        await axios.post("http://localhost:3000/applyLater/addApplyLater", applyLater,{
+        await axios.post("https://jobtracker-xhqr.onrender.com/applyLater/addApplyLater", applyLater,{
         headers:{
             "Authorization": `Bearer ${token}`
         }
@@ -151,7 +151,7 @@ async function verify(){
         return
     }
     try {
-        await axios.get(`http://localhost:3000/user/verifyUser`,{
+        await axios.get(`https://jobtracker-xhqr.onrender.com/user/verifyUser`,{
             headers:{
                 "Authorization": `Bearer ${token}`
             }

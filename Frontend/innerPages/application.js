@@ -10,7 +10,7 @@ document.getElementById("closeAppIntOverlay").addEventListener("click", () => {
 async function loadAppliedApplications(){
     try {
         const token = localStorage.getItem("token")
-        const response = await axios.get("http://localhost:3000/applications/getApplications",{
+        const response = await axios.get("https://jobtracker-xhqr.onrender.com/applications/getApplications",{
             headers:{
                 "Authorization": `Bearer ${token}`
             }
@@ -81,7 +81,7 @@ async function updateStatus(applicationId, newStatus){
         overlay.style.display = "flex"
         overlay.dataset.appId = applicationId
     }else{
-        await axios.put(`http://localhost:3000/applications/editApplication`,{
+        await axios.put(`https://jobtracker-xhqr.onrender.com/applications/editApplication`,{
         applicationId:applicationId,
         status:newStatus
         },{
@@ -106,7 +106,7 @@ async function getIntDate(event){
         alert("Interview date not selected")
         return
     }
-    await axios.put(`http://localhost:3000/applications/editApplication`,{
+    await axios.put(`https://jobtracker-xhqr.onrender.com/applications/editApplication`,{
         applicationId:applicationId,
         status:"Interviewing"
     },{
@@ -123,7 +123,7 @@ async function getIntDate(event){
 
 async function addToInterview(applicationId, intDate){
     const token = localStorage.getItem("token")
-    const response = await axios.get(`http://localhost:3000/applications/getApplication?applicationId=${applicationId}`,{
+    const response = await axios.get(`https://jobtracker-xhqr.onrender.com/applications/getApplication?applicationId=${applicationId}`,{
         headers:{
             "Authorization": `Bearer ${token}`
         }
@@ -134,7 +134,7 @@ async function addToInterview(applicationId, intDate){
         post: application.post,
         interviewDate: intDate
     }
-    await axios.post("http://localhost:3000/interviews/addInterview", interview,{
+    await axios.post("https://jobtracker-xhqr.onrender.com/interviews/addInterview", interview,{
         headers:{
             "Authorization": `Bearer ${token}`
     }
@@ -217,7 +217,7 @@ function applicationOverlay(){
         const token = localStorage.getItem("token")
 
 
-        await axios.post("http://localhost:3000/applications/addApplication", formData,{
+        await axios.post("https://jobtracker-xhqr.onrender.com/applications/addApplication", formData,{
         headers:{
             "Authorization": `Bearer ${token}`,
             "Content-Type": "multipart/form-data"
@@ -245,7 +245,7 @@ async function verify(){
         return
     }
     try {
-        await axios.get(`http://localhost:3000/user/verifyUser`,{
+        await axios.get(`https://jobtracker-xhqr.onrender.com/user/verifyUser`,{
             headers:{
                 "Authorization": `Bearer ${token}`
             }

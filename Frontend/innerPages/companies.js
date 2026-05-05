@@ -5,7 +5,7 @@ const rowsPerPage = 10
 async function loadCompanies(){
     try {
         const token = localStorage.getItem("token")
-        const response = await axios.get("http://localhost:3000/companies/getCompanies",{
+        const response = await axios.get("https://jobtracker-xhqr.onrender.com/companies/getCompanies",{
             headers:{
                 "Authorization": `Bearer ${token}`
             }
@@ -126,7 +126,7 @@ async function navButtons(){
             companyContact: companyContact
         }
 
-        await axios.post("http://localhost:3000/companies/addCompany", company,{
+        await axios.post("https://jobtracker-xhqr.onrender.com/companies/addCompany", company,{
         headers:{
             "Authorization": `Bearer ${token}`
         }
@@ -147,7 +147,7 @@ async function verify(){
         return
     }
     try {
-        await axios.get(`http://localhost:3000/user/verifyUser`,{
+        await axios.get(`https://jobtracker-xhqr.onrender.com/user/verifyUser`,{
             headers:{
                 "Authorization": `Bearer ${token}`
             }

@@ -5,7 +5,7 @@ const rowsPerPage = 10
 async function loadOffers(){
     try {
         const token = localStorage.getItem("token")
-        const response = await axios.get("http://localhost:3000/offers/getOffers",{
+        const response = await axios.get("https://jobtracker-xhqr.onrender.com/offers/getOffers",{
             headers:{
                 "Authorization": `Bearer ${token}`
             }
@@ -104,7 +104,7 @@ async function navButtons(){
             lastDate:lastDate
         }
 
-        await axios.post("http://localhost:3000/offers/addOffer", offer,{
+        await axios.post("https://jobtracker-xhqr.onrender.com/offers/addOffer", offer,{
         headers:{
             "Authorization": `Bearer ${token}`
         }
@@ -126,7 +126,7 @@ async function verify(){
         return
     }
     try {
-        await axios.get(`http://localhost:3000/user/verifyUser`,{
+        await axios.get(`https://jobtracker-xhqr.onrender.com/user/verifyUser`,{
             headers:{
                 "Authorization": `Bearer ${token}`
             }

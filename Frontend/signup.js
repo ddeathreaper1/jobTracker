@@ -16,7 +16,7 @@ function handleFormSubmit(event){
         password:password
     }
 
-    axios.post(`http://localhost:3000/user/addUser`,userDetails).then((res)=>{
+    axios.post(`https://jobtracker-xhqr.onrender.com/user/addUser`,userDetails).then((res)=>{
         alert("User added successfully")
         window.location.href = "./login.html"
     }).catch((err)=>{

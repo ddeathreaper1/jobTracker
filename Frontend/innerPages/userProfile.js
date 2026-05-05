@@ -2,7 +2,7 @@
 async function fillForm(){
     try {
         const token = localStorage.getItem("token")
-        const response  = await axios.get("http://localhost:3000/user/getUser",{
+        const response  = await axios.get("https://jobtracker-xhqr.onrender.com/user/getUser",{
             headers:{
                 "Authorization": `Bearer ${token}`
             }
@@ -39,7 +39,7 @@ function handleUserProfileUpdate(event){
 
 
     try {
-        axios.put("http://localhost:3000/user/updateUser",updateData, {
+        axios.put("https://jobtracker-xhqr.onrender.com/user/updateUser",updateData, {
             headers:{
                 "Authorization": `Bearer ${token}`
             }
@@ -70,7 +70,7 @@ async function verify(){
         return
     }
     try {
-        await axios.get(`http://localhost:3000/user/verifyUser`,{
+        await axios.get(`https://jobtracker-xhqr.onrender.com/user/verifyUser`,{
             headers:{
                 "Authorization": `Bearer ${token}`
             }
@@ -95,7 +95,7 @@ async function verify(){
         return
     }
     try {
-        await axios.get(`http://localhost:3000/user/verifyUser`,{
+        await axios.get(`https://jobtracker-xhqr.onrender.com/user/verifyUser`,{
             headers:{
                 "Authorization": `Bearer ${token}`
             }
